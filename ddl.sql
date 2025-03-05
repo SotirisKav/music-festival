@@ -6,6 +6,7 @@ CREATE TABLE festival (
     FOREIGN KEY (address) REFERENCES location(address)
 );
 
+--gia na dokimasoume edw
 DROP TABLE IF EXISTS location;
 CREATE TABLE location (
 	address VARCHAR(100) NOT NULL,
