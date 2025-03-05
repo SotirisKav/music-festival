@@ -5,7 +5,7 @@ CREATE TABLE festival (
     PRIMARY KEY (festival_year),
     FOREIGN KEY (address) REFERENCES location(address)
 );
-
+KAVADINIO
 DROP TABLE IF EXISTS location;
 CREATE TABLE location (
 	address VARCHAR(100) NOT NULL,
