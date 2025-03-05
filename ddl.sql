@@ -19,3 +19,5 @@ DROP TABLE IF EXISTS event;
 CREATE TABLE event (
 	building VARCHAR(100) NOT NULL
 );
+
+--just adding this comment in order to test change tracking
