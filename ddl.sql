@@ -6,7 +6,6 @@ CREATE TABLE festival (
     FOREIGN KEY (address) REFERENCES location(address)
 );
 
---gia na dokimasoume edw
 DROP TABLE IF EXISTS location;
 CREATE TABLE location (
 	address VARCHAR(100) NOT NULL,
@@ -20,5 +19,3 @@ DROP TABLE IF EXISTS event;
 CREATE TABLE event (
 	building VARCHAR(100) NOT NULL
 );
-
---just adding this comment in order to test change tracking
