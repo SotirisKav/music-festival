@@ -19,3 +19,5 @@ DROP TABLE IF EXISTS event;
 CREATE TABLE event (
 	building VARCHAR(100) NOT NULL
 );
+
+-- gia na kanoume to branch mas 
