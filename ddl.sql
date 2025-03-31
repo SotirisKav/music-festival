@@ -148,8 +148,8 @@ DROP TABLE IF EXISTS review;
 CREATE TABLE review(
     review_id INT NOT NULL AUTO_INCREMENT,
     artist_performance_grade VARCHAR(20) check(artist_performance_grade in('Very Unsatisfied', 'Unsatisfied', 'Neutral', 'Satisfied', 'Very Satisfied')),
-    lighting_sound_grade VARCHAR(20) check(lighting_sound_grade in('Very Unsatisfied', 'Unsatisfied', 'Neutral', 'Satisfied', 'Very Satisfied'))
-    organization_grade VARCHAR(20)check(organization_grade in('Very Unsatisfied', 'Unsatisfied', 'Neutral', 'Satisfied', 'Very Satisfied'))
+    lighting_sound_grade VARCHAR(20) check(lighting_sound_grade in('Very Unsatisfied', 'Unsatisfied', 'Neutral', 'Satisfied', 'Very Satisfied')),
+    organization_grade VARCHAR(20)check(organization_grade in('Very Unsatisfied', 'Unsatisfied', 'Neutral', 'Satisfied', 'Very Satisfied')),
     final_impression_grade VARCHAR(20) check(final_impression_grade in('Very Unsatisfied', 'Unsatisfied', 'Neutral', 'Satisfied', 'Very Satisfied')),
     visitor_id INT NOT NULL,
     performance_id INT NOT NULL,
