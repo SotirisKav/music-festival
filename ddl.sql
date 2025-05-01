@@ -1,3 +1,4 @@
+DROP database IF EXISTS festival_db;
 CREATE database festival_db;
 USE festival_db;
 
@@ -16,7 +17,7 @@ CREATE TABLE festival (
     start_date DATE NOT NULL,
     end_date DATE NOT NULL,
     address VARCHAR(100) NOT NULL,
-    PRIMARY KEY (festival_year)
+    PRIMARY KEY (festival_year),
     FOREIGN KEY (address) REFERENCES location (address)
 );
 
@@ -53,9 +54,9 @@ CREATE TABLE building_staff (
 
 DROP TABLE IF EXISTS event;
 CREATE TABLE event (
-    event_id INT NOT NULL AUTO_INCREMENT, -- kav we added event_id for unique identification, watch the er
+    event_id INT NOT NULL AUTO_INCREMENT, 
     event_name VARCHAR(100) NOT NULL,
-    building _name VARCHAR(100) NOT NULL, 
+    building_name VARCHAR(100) NOT NULL, 
     event_date DATE NOT NULL,
     festival_year INT NOT NULL,
     PRIMARY KEY (event_id),
@@ -68,7 +69,7 @@ CREATE TABLE performance(
     performance_id INT NOT NULL AUTO_INCREMENT,
     performance_type VARCHAR(100) NOT NULL,
     performance_time TIME NOT NULL,
-    performance_duration INT NOT NULL, --in minutes
+    performance_duration INT NOT NULL, 
     event_id INT NOT NULL,
     building_name VARCHAR(100) NOT NULL,
     PRIMARY KEY (performance_id),
@@ -126,13 +127,12 @@ CREATE TABLE band(
     PRIMARY KEY (band_id)
 );
 
-
 DROP TABLE IF EXISTS artist_band;
 CREATE TABLE artist_band(
     artist_id INT NOT NULL,
     band_id INT NOT NULL,
-    PRIMARY KEY (arist_id,band_id),
-    FOREIGN KEY (arist_id) REFERENCES artist (artist_id),
+    PRIMARY KEY (artist_id,band_id),
+    FOREIGN KEY (artist_id) REFERENCES artist (artist_id),
     FOREIGN KEY (band_id) REFERENCES band (band_id)
 );
  
@@ -145,15 +145,60 @@ CREATE TABLE visitor (
 );
 
 DROP TABLE IF EXISTS review;
-CREATE TABLE review(
+CREATE TABLE review  (
     review_id INT NOT NULL AUTO_INCREMENT,
     artist_performance_grade VARCHAR(20) check(artist_performance_grade in('Very Unsatisfied', 'Unsatisfied', 'Neutral', 'Satisfied', 'Very Satisfied')),
-    lighting_sound_grade VARCHAR(20) check(lighting_sound_grade in('Very Unsatisfied', 'Unsatisfied', 'Neutral', 'Satisfied', 'Very Satisfied'))
-    organization_grade VARCHAR(20)check(organization_grade in('Very Unsatisfied', 'Unsatisfied', 'Neutral', 'Satisfied', 'Very Satisfied'))
+    lighting_sound_grade VARCHAR(20) check(lighting_sound_grade in('Very Unsatisfied', 'Unsatisfied', 'Neutral', 'Satisfied', 'Very Satisfied')),
+    organization_grade VARCHAR(20)check(organization_grade in('Very Unsatisfied', 'Unsatisfied', 'Neutral', 'Satisfied', 'Very Satisfied')),
     final_impression_grade VARCHAR(20) check(final_impression_grade in('Very Unsatisfied', 'Unsatisfied', 'Neutral', 'Satisfied', 'Very Satisfied')),
     visitor_id INT NOT NULL,
     performance_id INT NOT NULL,
     PRIMARY KEY (review_id),
     FOREIGN KEY(visitor_id) REFERENCES visitor (visitor_id),
     FOREIGN KEY (performance_id) REFERENCES performance (performance_id)
+);
+
+
+DROP TABLE IF EXISTS ticket;
+CREATE TABLE ticket (
+    EAN INT NOT NULL AUTO_INCREMENT,
+    holder_first_name VARCHAR(30) NOT NULL,
+    holder_last_name VARCHAR(30) NOT NULL,    
+    holder_phone_number VARCHAR(15) NOT NULL,
+    holder_email VARCHAR(50) NOT NULL,
+    holder_age INT NOT NULL,
+    category VARCHAR(50) NOT NULL check(category in('VIP', 'General Entrance', 'Backstage')),
+    purchase_date DATE NOT NULL,
+    ticket_price DECIMAL(10, 2) NOT NULL,
+    payment_method VARCHAR(20) NOT NULL check(payment_method in('Credit Card', 'Debit Card')),
+    scanned BOOLEAN NOT NULL,
+    event_id INT NOT NULL,
+    visitor_id INT NOT NULL,
+    PRIMARY KEY (EAN),
+    FOREIGN KEY (event_id) REFERENCES event (event_id),
+    FOREIGN KEY (visitor_id) REFERENCES visitor (visitor_id)
+);
+
+DROP TABLE IF EXISTS Seller_Queue;
+CREATE TABLE Seller_Queue (
+    Seller_queue_id INT NOT NULL AUTO_INCREMENT,
+    EAN INT NOT NULL,
+    event_id INT NOT NULL,
+    category VARCHAR(50) NOT NULL check(category in('VIP', 'General Entrance', 'Backstage')),
+    sell_date DATE NOT NULL,
+    PRIMARY KEY (Seller_queue_id),
+    FOREIGN KEY (EAN) REFERENCES ticket (EAN),
+    FOREIGN KEY (event_id) REFERENCES event(event_id)
+);
+
+DROP TABLE IF EXISTS Buyer_Queue;
+CREATE TABLE Buyer_Queue (
+    Buyer_queue_id INT NOT NULL AUTO_INCREMENT,
+    event_id INT NOT NULL,
+    EAN INT NOT NULL,   
+    category VARCHAR(50) NOT NULL check(category in('VIP', 'General Entrance', 'Backstage')),
+    buy_date DATE NOT NULL,
+    PRIMARY KEY (Buyer_queue_id),
+    FOREIGN KEY (EAN) REFERENCES ticket (EAN),
+    FOREIGN KEY (event_id) REFERENCES event(event_id)
 );
