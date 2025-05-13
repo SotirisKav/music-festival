@@ -22,6 +22,44 @@ This project is ideal for event organizers, music enthusiasts, and anyone intere
 - **Ticketing System**: Track ticket sales, availability, and pricing for different events and performances.
 - **Festival Reviews**: Allow festival attendees to rate and review performances and events.
 
+
+## Technical Details
+
+### Technologies Used:
+
+- **MySQL**: MySQL was used for setting up, storing and managing the database, as well as executing SQL queries.
+
+- **MAMP**: MAMP was used to create a local development environment for managing the MySQL database and running the web application via Apache. 
+
+- **Python**: Python was used for developing the application and generating the necessary data through the `fake_data.py` script.
+  
+- **Flask**: The web server for the application was created using Flask, which is a micro web framework for building Python applications.
+
+- **Jinja2**: Jinja2 was used to dynamically generate HTML pages on the server side.
+
+- **HTML/CSS**: HTML and CSS were used to develop the user interface (UI).
+
+### Software Versions:
+
+- **Python 3.3.12**
+- **Flask 3.1.0**
+- **MySQL 8.0.40**
+- **Jinja2 3.1.6**
+- **PHP 8.3.14**
+
+### Assumptions:
+
+1. **Limitations on SQL Query Types**: The application only allows SELECT queries for security reasons. Other SQL query types such as INSERT, UPDATE, or DELETE are not allowed.
+
+2. **Data Sources**: Data is generated using the `fake_data.py` Python script. The generated data is random and is mainly intended for development and testing purposes.
+
+3. **Database Structure**: The database includes key entities such as artists, music genres, festivals, and events. The relationships are defined through the `artist`, `band`, `event`, and `festival` tables.
+
+4. **Artist and Band Data**: The system supports both artists and bands, who may belong to multiple music genres. The data for artists and bands is combined using the `artist_genre_view` and `band_genre_view` views.
+
+5. **Performance**: For large databases with many artists and events, performance may be impacted when executing complex queries.
+6. 
+
 ## Installation
 
 To get started with the Music Festival Database, follow the steps below:
