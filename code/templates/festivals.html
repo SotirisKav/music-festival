@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Festivals{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Music Festivals</h1>
+
+<div class="row">
+    {% for festival in festivals %}
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            {% if festival.poster_image_url %}
+            <img src="{{ festival.poster_image_url }}" class="card-img-top" alt="{{ festival.festival_year }} Festival" style="height: 200px; object-fit: cover;">
+            {% else %}
+            <div class="card-img-top bg-secondary text-white d-flex align-items-center justify-content-center" style="height: 200px;">
+                <h5>{{ festival.festival_year }} Festival</h5>
+            </div>
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ festival.festival_year }}</h5>
+                <p class="card-text">
+                    <strong>Location:</strong> {{ festival.city }}, {{ festival.country }}<br>
+                    <strong>Dates:</strong>
+                    {{ festival.start_date.strftime('%b %d, %Y') }} - {{ festival.end_date.strftime('%b %d, %Y') }}
+                </p>
+                <a href="{{ url_for('festival_detail', festival_id=festival.festival_id) }}" class="btn btn-sm btn-primary">View Details</a>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="col-12">
+        <div class="alert alert-info">No festivals found</div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

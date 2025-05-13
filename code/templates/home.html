@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome to Festival Explorer{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="jumbotron text-center bg-cover home-hero p-5 rounded">
+    <div class="overlay"></div>
+    <div class="container position-relative text-white">
+        <h1 class="display-4">Welcome to Festival Explorer</h1>
+        <p class="lead">Discover amazing music festivals, artists, and performances</p>
+        <hr class="my-4">
+        <p>Browse our database of festivals, find your favorite artists and plan your next musical adventure!</p>
+        <div class="mt-4">
+            <a class="btn btn-primary btn-lg" href="/festivals" role="button">Browse Festivals</a>
+            <a class="btn btn-outline-light btn-lg ms-2" href="/artists" role="button">Explore Artists</a>
+        </div>
+    </div>
+</div>
+
+<!-- Features Section -->
+<div class="row mt-5">
+    <div class="col-md-4">
+        <div class="card h-100 feature-card">
+            <div class="card-body text-center">
+                <i class="bi bi-calendar-event feature-icon"></i>
+                <h3 class="card-title mt-3">Festivals</h3>
+                <p class="card-text">Discover music festivals happening around the world.</p>
+                <a href="/festivals" class="btn btn-primary">View Festivals</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 feature-card">
+            <div class="card-body text-center">
+                <i class="bi bi-person feature-icon"></i>
+                <h3 class="card-title mt-3">Artists</h3>
+                <p class="card-text">Find your favorite solo performers and their shows.</p>
+                <a href="/artists" class="btn btn-primary">View Artists</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 feature-card">
+            <div class="card-body text-center">
+                <i class="bi bi-people feature-icon"></i>
+                <h3 class="card-title mt-3">Bands</h3>
+                <p class="card-text">Explore amazing bands performing at our festivals.</p>
+                <a href="/bands" class="btn btn-primary">View Bands</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

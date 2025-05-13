@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Bands{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Bands</h1>
+
+<div class="row row-cols-1 row-cols-md-4 g-4">
+    {% for band in bands %}
+    <div class="col">
+        <div class="card h-100">
+            {% if band.band_image_url %}
+            <img src="{{ band.band_image_url }}" class="card-img-top" alt="{{ band.band_name }}" style="height: 200px; object-fit: cover;">
+            {% else %}
+            <div class="bg-secondary text-white d-flex justify-content-center align-items-center" style="height: 200px;">
+                <h5>{{ band.band_name }}</h5>
+            </div>
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ band.band_name }}</h5>
+                {% if band.band_nickname %}
+                <h6 class="card-subtitle mb-2 text-muted">"{{ band.band_nickname }}"</h6>
+                {% endif %}
+                <p class="card-text">
+                    <small>Formed: {{ band.date_of_formation.strftime('%Y') if band.date_of_formation else 'Unknown' }}</small>
+                </p>
+                <p class="card-text small">{{ band.band_description }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    
+    {% if not bands %}
+    <div class="col-12">
+        <div class="alert alert-info">No bands found</div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
