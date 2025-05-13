@@ -1,4 +1,4 @@
-# music-festival
+# Pulse University Music Festival
 ## Database Semester Project, for the "Databases" course (6th Semester) of the ECE School, NTUA
 
 Welcome to the **Pulse University Music Festival** Database! This project aims to emulate a realistic database for a music festival, as well as storing and managing data related to many entities that may participate in a festival. To name some of them: artists, bands, visitors, tickets, a reselling queue implemented with FIFO logic, events that contain different performances, and buildings that host these events, and staff that work in said buildings. Our database is optimized to query and analyze data in an efficient manner.
