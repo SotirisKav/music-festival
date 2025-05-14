@@ -1,0 +1,6 @@
+visitor_full_name	artist_full_name	total_artist_score
+Justin Lynch	Bruce Springsteen	154
+Tina Avila	Bruce Springsteen	150
+Kyle Berry	Bruce Springsteen	135
+Emily Reed	Bruce Springsteen	112
+Donald Kent	Bruce Springsteen	96

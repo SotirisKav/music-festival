@@ -1,0 +1,7 @@
+visitor_id	event_id	event_name	avg_event_score
+9	17	Diverse regional benchmark	3.20000000
+9	65	Streamlined uniform Graphic Interface	3.45000000
+9	79	Front-line bandwidth-monitored database	3.40000000
+9	94	Advanced cohesive analyzer	2.80000000
+9	101	Synergistic methodical flexibility	3.30000000
+9	126	Multi-layered explicit model	2.90000000

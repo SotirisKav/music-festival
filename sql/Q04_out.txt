@@ -1,0 +1,2 @@
+artist_id	artist_first_name	artist_last_name	Average Artist Performance Grade	Average Final Impression Grade
+10	Bruce	Springsteen	2.9521 / 5	3.0342 / 5

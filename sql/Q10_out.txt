@@ -1,0 +1,4 @@
+first_genre	second_genre	pair_count
+Pop	Jazz	5
+Classical	Metal	4
+Hip-Hop	Classical	4

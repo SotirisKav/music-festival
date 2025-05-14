@@ -1,0 +1,10 @@
+artist_id	artist_name	age	total_performances
+15	Ariana Grande	26	26
+26	Bob Marley	21	19
+2	Beyonce Beyonce	26	18
+29	Michael Jackson	21	18
+3	Drake Drake	19	15
+14	Future Future	27	15
+6	Bruno Mars	28	12
+28	David Bowie	29	12
+12	Tyler, Creator	22	7

@@ -1,0 +1,8 @@
+artist_id	artist_first_name	artist_last_name	genre_name	participated_in_2024
+2	Beyonce	Beyonce	Jazz	NO
+3	Drake	Drake	Jazz	YES
+6	Bruno	Mars	Jazz	NO
+7	Jeff	Buckley	Jazz	NO
+15	Ariana	Grande	Jazz	YES
+22	Bob	Dylan	Jazz	YES
+30	Amy	Winehouse	Jazz	YES

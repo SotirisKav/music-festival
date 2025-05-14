@@ -1,0 +1,2 @@
+festival_year	average_experience
+2016	2.7565 / 5
