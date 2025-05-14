@@ -8,7 +8,7 @@ This repository contains all the necessary files for setting up and running the 
 
 - **Database Management**: Utilizes MySQL for robust and scalable data storage.
 - **Data Generation**: Includes a Python script to create and manage dummy data for testing and development.
-- **Triggers and Procedures**: Implements MySQL triggers and procedures to automate and streamline database operations [here](link_to_script).
+- **Triggers and Procedures**: Implements MySQL triggers and procedures to automate and streamline database operations.
 - **Web Interface**: Provides a web-based interface for users to interact with the festival data, run custom SQL queries, and view results.
 
 This project is ideal for event organizers, music enthusiasts, and anyone interested in managing large-scale music festivals.
