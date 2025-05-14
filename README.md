@@ -49,16 +49,11 @@ This project is ideal for event organizers, music enthusiasts, and anyone intere
 
 ### Assumptions:
 
-1. **Limitations on SQL Query Types**: The application only allows SELECT queries for security reasons. Other SQL query types such as INSERT, UPDATE, or DELETE are not allowed.
-
-2. **Data Sources**: Data is generated using the `fake_data.py` Python script. The generated data is random and is mainly intended for development and testing purposes.
-
-3. **Database Structure**: The database includes key entities such as artists, music genres, festivals, and events. The relationships are defined through the `artist`, `band`, `event`, and `festival` tables.
-
-4. **Artist and Band Data**: The system supports both artists and bands, who may belong to multiple music genres. The data for artists and bands is combined using the `artist_genre_view` and `band_genre_view` views.
-
-5. **Performance**: For large databases with many artists and events, performance may be impacted when executing complex queries.
-6. 
+1. Festivals start at 12:00a.m. and finish at 11:00p.m. 
+2. All the events of a festival are being held at a specific building each day.
+3. We set a lower time limit for each performance equal to 15 minutes.
+4. A visitor is defined in our database as someone who holds tickets: scanned or not.
+5. A visitor must be over the age of 16.
 
 ## Installation
 
@@ -72,18 +67,19 @@ To get started with the Music Festival Database, follow the steps below:
 
 2. **Set up the MySQL database**:
 
-   - Create a MySQL database and import the `ddl.sql` file to set up the necessary tables and relationships.
+   - Create a MySQL database and import the `install.sql` file to set up the necessary tables and relationships (optional import load.sql file to load the fake data).
    
      ```bash
-     mysql -u your_username -p your_database < ddl.sql
+     mysql -u root -p festival_db < install.sql
+     mysql -u root -p festival_db < load.sql
      ```
 
 3. **Install the required Python libraries**:
 
-   - Install all the necessary Python libraries specified in the `requirements.txt` file.
+   - Install all the necessary Python libraries. (flask)
    
      ```bash
-     pip install -r requirements.txt
+     pip install flask
      ```
 
 4. **Run the app**:
