@@ -22,6 +22,13 @@ This project is ideal for event organizers, music enthusiasts, and anyone intere
 - **Ticketing System**: Track ticket sales, availability, and pricing for different events and performances.
 - **Festival Reviews**: Allow festival attendees to rate and review performances and events.
 
+## Assumptions:
+
+1. Festivals start at 12:00a.m. and finish at 11:00p.m. 
+2. All the events of a festival are being held at a specific building each day.
+3. We set a lower time limit for each performance equal to 15 minutes.
+4. A visitor is defined in our database as someone who holds tickets: scanned or not.
+5. A visitor must be over the age of 16.
 
 ## Technical Details
 
@@ -46,14 +53,6 @@ This project is ideal for event organizers, music enthusiasts, and anyone intere
 - **MySQL 8.0.40**
 - **Jinja2 3.1.6**
 - **PHP 8.3.14**
-
-### Assumptions:
-
-1. Festivals start at 12:00a.m. and finish at 11:00p.m. 
-2. All the events of a festival are being held at a specific building each day.
-3. We set a lower time limit for each performance equal to 15 minutes.
-4. A visitor is defined in our database as someone who holds tickets: scanned or not.
-5. A visitor must be over the age of 16.
 
 ## Installation
 
