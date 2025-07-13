@@ -46,17 +46,21 @@ This project is ideal for event organizers, music enthusiasts, and anyone intere
 
 - **HTML/CSS**: HTML and CSS were used to develop the user interface (UI).
 
-### Software Versions:
+### Tech Stack:
 
 - **Python 3.3.12**
 - **Flask 3.1.0**
 - **MySQL 8.0.40**
 - **Jinja2 3.1.6**
-- **PHP 8.3.14**
+- **Python Anywhere**
 
 ## Installation
 
-To get started with the Music Festival Database, follow the steps below:
+To get started with the Music Festival Database, either visit the public URL:  
+
+**[https://sotiriskav.pythonanywhere.com](https://sotiriskav.pythonanywhere.com)**
+
+or if you wish to install the app locally, follow the steps mentioned below:
 
 1. Clone the repository:
 
@@ -75,10 +79,10 @@ To get started with the Music Festival Database, follow the steps below:
 
 3. **Install the required Python libraries**:
 
-   - Install all the necessary Python libraries. (flask)
+   - Install all the necessary Python libraries. 
    
      ```bash
-     pip install flask
+     pip install -r requirements.txt
      ```
 
 4. **Run the app**:
